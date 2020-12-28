@@ -25,7 +25,7 @@ function refestElement(el, { arg, modifiers, value }) {
   if (typeof value != "object") {
     value = { duration: value }
   }
-  value = { ...value, ...modifiers }
+  value = Object.assign({}, value, modifiers)
   removeAttrsAos(el)
   value[""] = arg
   setAttrsAos(el, value)
